@@ -1,6 +1,6 @@
 <?php
 
-namespace RenokiCo\L1;
+namespace RaoulHofmann\L1;
 
 use Saloon\Http\Connector;
 

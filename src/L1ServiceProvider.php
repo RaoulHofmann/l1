@@ -1,9 +1,9 @@
 <?php
 
-namespace RenokiCo\L1;
+namespace RaoulHofmann\L1;
 
 use Illuminate\Support\ServiceProvider;
-use RenokiCo\L1\D1\D1Connection;
+use RaoulHofmann\L1\D1\D1Connection;
 
 class L1ServiceProvider extends ServiceProvider
 {

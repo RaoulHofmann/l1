@@ -1,6 +1,6 @@
 <?php
 
-namespace RenokiCo\L1\Test;
+namespace RaoulHofmann\L1\Test;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -15,7 +15,7 @@ abstract class TestCase extends Orchestra
 
         $this->loadLaravelMigrations(['--database' => 'd1']);
 
-        $this->withFactories(__DIR__.'/database/factories');
+        $this->withFactories(__DIR__ . '/database/factories');
     }
 
     /**
@@ -24,7 +24,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \RenokiCo\L1\L1ServiceProvider::class,
+            \RaoulHofmann\L1\L1ServiceProvider::class,
         ];
     }
 
