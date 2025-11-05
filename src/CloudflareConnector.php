@@ -3,6 +3,7 @@
 namespace RaoulHofmann\L1;
 
 use Saloon\Http\Connector;
+use Saloon\Http\Auth\TokenAuthenticator;
 
 abstract class CloudflareConnector extends Connector
 {
@@ -11,7 +12,7 @@ abstract class CloudflareConnector extends Connector
         public ?string $accountId = null,
         public string $apiUrl = 'https://api.cloudflare.com/client/v4',
     ) {
-        $this->withTokenAuth($token);
+        $this->authenticate(new TokenAuthenticator($token));
     }
 
     public function resolveBaseUrl(): string

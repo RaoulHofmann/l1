@@ -1,7 +1,6 @@
 <?php
 
 namespace RaoulHofmann\L1\D1\Pdo;
-
 use Illuminate\Support\Arr;
 use PDO;
 use PDOException;
@@ -21,7 +20,7 @@ class D1PdoStatement extends PDOStatement
         //
     }
 
-    public function setFetchMode(int $mode, mixed ...$args): bool
+    public function setFetchMode($mode, ...$args): true
     {
         $this->fetchMode = $mode;
 
@@ -59,7 +58,7 @@ class D1PdoStatement extends PDOStatement
 
         $this->responses = $response->json('result');
 
-        $lastId = Arr::get(Arr::last($this->responses), 'meta.last_row_id', null);
+        $lastId = Arr::get(Arr::last($this->responses), 'meta.last_row_id');
 
         if (! in_array($lastId, [0, null])) {
             $this->pdo->setLastInsertId(value: $lastId);
@@ -70,15 +69,15 @@ class D1PdoStatement extends PDOStatement
 
     public function fetchAll(int $mode = PDO::FETCH_DEFAULT, ...$args): array
     {
-        $response = match ($this->fetchMode) {
+        return match ($this->fetchMode) {
             PDO::FETCH_ASSOC => $this->rowsFromResponses(),
-            PDO::FETCH_OBJ => collect($this->rowsFromResponses())->map(function ($row) {
-                return (object) $row;
-            })->toArray(),
+            PDO::FETCH_OBJ => collect($this->rowsFromResponses())
+                ->map(function ($row) {
+                    return (object) $row;
+                })
+                ->toArray(),
             default => throw new PDOException('Unsupported fetch mode.'),
         };
-
-        return $response;
     }
 
     public function rowCount(): int
