@@ -3,10 +3,10 @@
 ![CI](https://github.com/renoki-co/l1/workflows/CI/badge.svg?branch=master)
 [![codecov](https://codecov.io/gh/renoki-co/l1/branch/master/graph/badge.svg)](https://codecov.io/gh/renoki-co/l1/branch/master)
 [![StyleCI](https://github.styleci.io/repos/651202208/shield?branch=master)](https://github.styleci.io/repos/651202208)
-[![Latest Stable Version](https://poser.pugx.org/renoki-co/l1/v/stable)](https://packagist.org/packages/renoki-co/l1)
-[![Total Downloads](https://poser.pugx.org/renoki-co/l1/downloads)](https://packagist.org/packages/renoki-co/l1)
-[![Monthly Downloads](https://poser.pugx.org/renoki-co/l1/d/monthly)](https://packagist.org/packages/renoki-co/l1)
-[![License](https://poser.pugx.org/renoki-co/l1/license)](https://packagist.org/packages/renoki-co/l1)
+[![Latest Stable Version](https://poser.pugx.org/raoulhofmann/l1/v/stable)](https://packagist.org/packages/raoulhofmann/l1)
+[![Total Downloads](https://poser.pugx.org/raoulhofmann/l1/downloads)](https://packagist.org/packages/raoulhofmann/l1)
+[![Monthly Downloads](https://poser.pugx.org/raoulhofmann/l1/d/monthly)](https://packagist.org/packages/raoulhofmann/l1)
+[![License](https://poser.pugx.org/raoulhofmann/l1/license)](https://packagist.org/packages/raoulhofmann/l1)
 
 Extend your PHP/Laravel application with Cloudflare bindings.
 
