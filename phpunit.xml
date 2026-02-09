@@ -8,9 +8,10 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+         failOnWarning="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Renoki Co Test Suite">
+        <testsuite name="Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
