@@ -40,7 +40,8 @@ abstract class TestCase extends Orchestra
         $app['config']->set('database.connections.d1', [
             'driver' => 'd1',
             'prefix' => '',
-            'database' => env('CLOUDFLARE_D1_DATABASE_ID', 'local-d1'),
+            // must match the worker binding name in wrangler.toml (e.g., DB1)
+            'database' => env('CLOUDFLARE_D1_DATABASE_ID', 'DB1'),
             'api' => env('CLOUDFLARE_API', 'http://127.0.0.1:8787'),
             'auth' => [
                 'token' => env('CLOUDFLARE_TOKEN', 'local-token'),

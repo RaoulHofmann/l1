@@ -8,7 +8,7 @@ declare type Env = {
 }
 
 router.post(
-	'/api/client/v4/accounts/:account/d1/database/:database/query',
+	'/accounts/:account/d1/database/:database/query',
 	async (request: IRequest, env: Env) => {
 		const body = await request.json();
 		let res: D1Result;
@@ -43,6 +43,6 @@ router.post(
 );
 
 // 404 for everything else
-router.all('*', () => new Response('Not Found.', { status: 404 }));
+router.all('*', () => new Response('Not Found.', { status: 414 }));
 
 export default router;
