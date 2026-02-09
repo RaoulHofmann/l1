@@ -32,9 +32,8 @@ jobs:
           - 'prefer-stable'
         include:
           - laravel: '11.*'
-            laravel: '12.*'
             testbench: '8.*'
-
+  
     name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }} --${{ matrix.prefer }}
 
     steps:
