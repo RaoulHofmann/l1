@@ -36,14 +36,15 @@ abstract class TestCase extends Orchestra
         $app['config']->set('app.key', 'wslxrEFGWY6GfGhvN9L3wH3KSRJQQpBD');
         $app['config']->set('auth.providers.users.model', Models\User::class);
         $app['config']->set('database.default', 'd1');
+
         $app['config']->set('database.connections.d1', [
             'driver' => 'd1',
             'prefix' => '',
-            'database' => env('CLOUDFLARE_D1_DATABASE_ID', ''),
-            'api' => 'https://api.cloudflare.com/client/v4',
+            'database' => env('CLOUDFLARE_D1_DATABASE_ID', 'local-d1'),
+            'api' => env('CLOUDFLARE_API', 'http://127.0.0.1:8787'),
             'auth' => [
-                'token' => env('CLOUDFLARE_TOKEN', getenv('CLOUDFLARE_TOKEN')),
-                'account_id' => env('CLOUDFLARE_ACCOUNT_ID', getenv('CLOUDFLARE_ACCOUNT_ID')),
+                'token' => env('CLOUDFLARE_TOKEN', 'local-token'),
+                'account_id' => env('CLOUDFLARE_ACCOUNT_ID', 'local-account'),
             ],
         ]);
     }
