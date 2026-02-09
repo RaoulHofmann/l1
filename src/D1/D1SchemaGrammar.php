@@ -11,7 +11,6 @@ class D1SchemaGrammar extends SQLiteGrammar
     public function compileTableExists($schema, $table): string
     {
         return Str::of(parent::compileTableExists($schema, $table))
-            ->replace('sqlite_master', 'sqlite_schema')
             ->replace('"main".', '')
             ->__toString();
     }
@@ -20,7 +19,6 @@ class D1SchemaGrammar extends SQLiteGrammar
     public function compileDropAllTables($schema = null): string
     {
         return Str::of(parent::compileDropAllTables($schema))
-            ->replace('sqlite_master', 'sqlite_schema')
             ->replace('"main".', '')
             ->__toString();
     }
@@ -29,7 +27,6 @@ class D1SchemaGrammar extends SQLiteGrammar
     public function compileDropAllViews($schema = null): string
     {
         return Str::of(parent::compileDropAllViews($schema))
-            ->replace('sqlite_master', 'sqlite_schema')
             ->replace('"main".', '')
             ->__toString();
     }
